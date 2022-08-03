@@ -1,0 +1,11 @@
+package 原子类型Atomic;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class CUUID {
+    private static final AtomicInteger atomicInteger = new AtomicInteger(1);
+
+    public static int generateId() {
+        return atomicInteger.getAndIncrement();
+    }
+}
